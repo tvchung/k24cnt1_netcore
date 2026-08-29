@@ -3,6 +3,7 @@ using TvcLesson04Lab.Models;
 
 namespace TvcLesson04Lab.Controllers
 {
+    [Route("/TvcAccount", Name = "account")]
     public class TvcAccountController : Controller
     {
         private readonly List<TvcAccount> tvcAccounts = new()
@@ -68,14 +69,14 @@ namespace TvcLesson04Lab.Controllers
                 Birthday = new DateTime(1997, 12, 5)
             }
         };
-        
+      
         public IActionResult TvcIndex()
         {
             ViewBag.TvcAccounts = tvcAccounts;
             return View();
         }
 
-        [Route("ho-so-cua-toi",Name ="TvcProfile")]
+        [Route("ho-so-cua-toi",Name ="tvcprofile")]
         public IActionResult TvcProfile(int? id)
         {
             TvcAccount tvcAccount = new TvcAccount
